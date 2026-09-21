@@ -1,6 +1,6 @@
 export class Adresse {
     constructor(mentionsComplementaires, numeroDeVoie, typeDeVoie, nom, codePostal, commune) {
-        this.mentionsComplementaires = mentionsComplementaires || null;
+        this.mentionsComplementaires = mentionsComplementaires;
         this.numeroDeVoie = numeroDeVoie;
         this.typeDeVoie = typeDeVoie || null;
         this.nom = nom;
@@ -20,10 +20,9 @@ export class Adresse {
     }
 
     afficher () {
-        if (this.mentionsComplementaires) {
-            console.log(this.mentionsComplementaires);
-        }
-        console.log(`${this.numeroDeVoie} ${this.typeDeVoie ?? ""}${this.nom}\n${String(this.codePostal).padEnd(5, "0")} ${this.commune.toUpperCase()}`);
+        console.log(this.mentionsComplementaires ? this.mentionsComplementaires: "");
+        console.log(`${this.numeroDeVoie} ${this.typeDeVoie ?? ""}${this.nom}\n`+
+            `${String(this.codePostal).padEnd(5, "0")} ${this.commune.toUpperCase()}`);
 
             ;
     }
