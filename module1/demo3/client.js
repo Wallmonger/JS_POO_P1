@@ -1,10 +1,15 @@
 export class Client {
     #noClient;
-    nom;
-    prenom;
-    adresse;
-    dateNaissance;
-    noPermis;
+
+    constructor(noClient, nom, prenom, adresse, dateNaissance, noPermis) {
+        console.log("L'instance de client est crée");
+        this.#noClient = noClient;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.dateNaissance = dateNaissance;
+        this.noPermis = noPermis;
+    }
 
     afficherDonneesClient () {
         return `

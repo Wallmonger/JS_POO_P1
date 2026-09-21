@@ -1,15 +1,18 @@
 export class Voiture {
-    numeroSerie;
-    immat;
-    marque;
-    modele;
-    kilometrage;
-    vitesse;
-    vitesseMax;
-    dateMiseEnCirculation;
-    boiteDeVitesse;
-    energie;
-    categorie;
+
+    constructor(numeroSerie, immat, marque, modele, kilometrage, vitesse, vitesseMax, dateMiseEnCirculation, boiteDeVitesse, energie, categorie) {
+        this.numeroSerie = numeroSerie;
+        this.immat = immat;
+        this.marque = marque;
+        this.modele = modele;
+        this.kilometrage = kilometrage;
+        this.vitesse = vitesse;
+        this.vitesseMax = vitesseMax;
+        this.dateMiseEnCirculation = dateMiseEnCirculation;
+        this.boiteDeVitesse = boiteDeVitesse;
+        this.energie = energie;
+        this.categorie = categorie;
+    }
 
     afficherDonneesVoiture () {
         return `
