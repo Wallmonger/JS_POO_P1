@@ -22,7 +22,7 @@ let client = new Client(
     "Luke",
     "145 rue Etoile, Tattoine",
     new Date(),
-    "5555555"
+    "12345678"
 );
 
 let client2 = new Client(
@@ -31,14 +31,14 @@ let client2 = new Client(
     "Catherine",
     "148 rue des trucs, Paris",
     new Date(),
-    "78451278"
+
 );
 
 
 console.log(client.afficherDonneesClient());
 console.log(client2.afficherDonneesClient());
 
-console.log("Nombre de client créés : " + Client.nbClientsCrees)
+console.log("Nombre de client créés : " + Client.nbClientsCrees);
 
 
 /*console.log(voiture.afficherDonneesVoiture());*/

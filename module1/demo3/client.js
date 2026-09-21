@@ -4,7 +4,7 @@ export class Client {
     //Attribut de classe
     static nbClientsCrees = 0;
 
-    constructor(noClient, nom, prenom, adresse, dateNaissance, noPermis) {
+    constructor(noClient, nom, prenom, adresse, dateNaissance, noPermis = "XXXXXXXX") {
         console.log("L'instance de client est crée");
         this.#noClient = noClient;
         this.nom = nom;

@@ -1,6 +1,8 @@
 export class Voiture {
 
-    constructor(numeroSerie, immat, marque, modele, kilometrage, vitesse, vitesseMax, dateMiseEnCirculation, boiteDeVitesse, energie, categorie) {
+    static NB_ROUES_ROULANTE = 4;
+
+    constructor(numeroSerie, immat, marque, modele, kilometrage, vitesse, vitesseMax, dateMiseEnCirculation, boiteDeVitesse = "manuel", energie = "essence", categorie = "berline") {
         this.numeroSerie = numeroSerie;
         this.immat = immat;
         this.marque = marque;
