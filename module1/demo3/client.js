@@ -1,6 +1,9 @@
 export class Client {
     #noClient;
 
+    //Attribut de classe
+    static nbClientsCrees = 0;
+
     constructor(noClient, nom, prenom, adresse, dateNaissance, noPermis) {
         console.log("L'instance de client est crée");
         this.#noClient = noClient;
@@ -9,6 +12,8 @@ export class Client {
         this.adresse = adresse;
         this.dateNaissance = dateNaissance;
         this.noPermis = noPermis;
+
+        Client.ajouterClient();
     }
 
     afficherDonneesClient () {
@@ -20,6 +25,14 @@ export class Client {
             dateNaissance: ${this.dateNaissance ? this.dateNaissance.toLocaleDateString() : "<inconnu>"}, 
             noPermis: ${this.noPermis}
         `;
+    }
+
+    static ajouterClient () {
+        Client.nbClientsCrees++;
+    }
+
+    static retirerClient () {
+        Client.nbClientsCrees--;
     }
 
     get noClient() {

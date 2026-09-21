@@ -25,8 +25,23 @@ let client = new Client(
     "5555555"
 );
 
+let client2 = new Client(
+    "67785",
+    "Laborde",
+    "Catherine",
+    "148 rue des trucs, Paris",
+    new Date(),
+    "78451278"
+);
+
+
 console.log(client.afficherDonneesClient());
-console.log(voiture.afficherDonneesVoiture());
+console.log(client2.afficherDonneesClient());
+
+console.log("Nombre de client créés : " + Client.nbClientsCrees)
+
+
+/*console.log(voiture.afficherDonneesVoiture());*/
 
 /*
 client.nom = "Skywalker";

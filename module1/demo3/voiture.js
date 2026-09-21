@@ -35,13 +35,13 @@ export class Voiture {
             console.log("Tourner la clé");
             console.log("La voiture démarre");
         } else {
-            console.log("La voiture est déjà en train de rouler");
+            console.error("La voiture est déjà en train de rouler");
         }
     };
 
     accelerer () {
         if (this.vitesse > this.vitesseMax -5 ) {
-            console.log("la Voiture a atteint la vitesse maximale");
+            console.error("la Voiture a atteint la vitesse maximale");
         } else {
             this.vitesse += 5;
             console.log("La voiture accélère, sa vitesse est de " + this.vitesse + " km/h");
