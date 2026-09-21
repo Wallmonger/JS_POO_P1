@@ -10,7 +10,13 @@ export class Patient {
     }
 
     afficher () {
-        console.log(`${this.nom.toUpperCase()} ${this.prenom}\nTéléphone: ${this.numeroTelephone}\nSexe : ${this.sexe === "F" ? "Féminin" : "Masculin"}\nNuméro de Sécurité sociale : ${BigInt(this.numeroSecu)}\nDate de naissance : ${this.dateNaissance.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}\n${this.commentaires || "[Aucun Commentaire]"}`);
+        console.log(
+            `${this.nom.toUpperCase()} ${this.prenom} \n`+
+            `Téléphone: ${this.numeroTelephone}\n` +
+            `Sexe : ${this.sexe === "F" ? "Féminin" : "Masculin"}\n` +
+            `Numéro de Sécurité sociale : ${BigInt(this.numeroSecu)}\n`+
+            `Date de naissance : ${this.dateNaissance.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}\n`+
+            `${this.commentaires || "[Aucun Commentaire]"}`)
 
     }
 }
