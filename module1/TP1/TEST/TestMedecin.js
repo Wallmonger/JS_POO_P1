@@ -3,7 +3,7 @@ import {MedecinGeneraliste} from "../BO/MedecinGeneraliste.js";
 
 // Création d'un médecin
 const medecin = new MedecinGeneraliste("Dupont", "Jean", "0601020304");
-
+const medecin2 = new MedecinGeneraliste("Max", "Max", "5454545454")
 
 console.log("--------------- Médecin ---------------")
 medecin.afficher();
@@ -16,3 +16,5 @@ console.log("------------------------------------------------------------------"
 console.log("--------------- Changement du tarif ---------------")
 MedecinGeneraliste.tarif = 30
 medecin.afficher();
+MedecinGeneraliste.tarif--;
+medecin2.afficher();

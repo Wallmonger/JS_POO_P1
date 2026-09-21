@@ -20,7 +20,9 @@ export class Adresse {
     }
 
     afficher () {
-        console.log(this.mentionsComplementaires ? this.mentionsComplementaires: "");
+        if (this.mentionsComplementaires) {
+            console.log(this.mentionsComplementaires);
+        }
         console.log(`${this.numeroDeVoie} ${this.typeDeVoie ?? ""}${this.nom}\n`+
             `${String(this.codePostal).padEnd(5, "0")} ${this.commune.toUpperCase()}`);
 
