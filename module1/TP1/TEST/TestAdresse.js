@@ -1,4 +1,4 @@
-import {Adresse} from "../BO/Adresse.js";
+import {Adresse} from "../BO/adresse.js";
 
 
 console.log("__________________________ Adresses ______________________________");
@@ -12,7 +12,7 @@ const sh = new Adresse(
     "Saint Herblain"
 );
 
-const nio = Adresse.fromSansMentions(
+const nio = Adresse.adresseSansMentions (
     19,
     null,
     "avenue Léo Lagrange",
@@ -20,7 +20,7 @@ const nio = Adresse.fromSansMentions(
     "Niort"
 );
 
-const comp = Adresse.fromSansMentions(
+const comp = Adresse.adresseSansMentions (
     4,
     null,
     "Rue des Glatiniers",
