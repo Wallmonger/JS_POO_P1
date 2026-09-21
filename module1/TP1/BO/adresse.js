@@ -23,9 +23,7 @@ export class Adresse {
         if (this.mentionsComplementaires) {
             console.log(this.mentionsComplementaires);
         }
-        console.log(`
-            ${this.numeroDeVoie} ${this.typeDeVoie ?? ""}${this.nom}\n
-            ${this.codePostal} ${this.commune.toUpperCase()}`);
+        console.log(`${this.numeroDeVoie} ${this.typeDeVoie ?? ""}${this.nom}\n${String(this.codePostal).padEnd(5, "0")} ${this.commune.toUpperCase()}`);
 
             ;
     }
