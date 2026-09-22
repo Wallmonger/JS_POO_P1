@@ -11,7 +11,7 @@ export class Calendar {
     }
 
     generateCalendar(year, month) {
-        console.log(year, month);
+
         this.calendarDiv.innerHTML = '';
         this.renderTableHeader();
 
@@ -21,17 +21,7 @@ export class Calendar {
 
 
         const lastDay = new Date(year, month, 0).getDate();
-
-        let arrayOfDays = [];
-        for (let i = 1; i <= lastDay; i++) {
-            arrayOfDays.push(i);
-        }
-
-        this.renderDays(arrayOfDays, firstDayIndex);
-
-
-
-
+        this.renderDays(lastDay, firstDayIndex);
 
     }
 
@@ -58,19 +48,19 @@ export class Calendar {
     }
 
 
-    renderDays (arrayOfDays, firstDayIndex) {
+    renderDays (numberOfDays, firstDayIndex) {
         for (let i = 0; i < firstDayIndex ; i++) {
             const div = document.createElement("div");
             div.className = "empty-cell";
             this.calendarDiv.appendChild(div);
         }
 
-        arrayOfDays.forEach(dayOfMonth => {
+        for (let i = 1; i < numberOfDays; i++ ) {
             const div = document.createElement("div");
             div.className = "day-cell";
-            div.innerText = dayOfMonth;
+            div.innerText = i;
             this.calendarDiv.appendChild(div);
-        })
+        }
     }
 
 
