@@ -7,7 +7,7 @@ export class MedecinGeneraliste {
 
 
     constructor(lastname, firstname, phone, adresse) {
-        this.lastname = lastname;
+        this.lastname = lastname.toUpperCase();
         this.firstname = firstname;
         this.formatPhoneNumber(phone);
         this.ajouterAdresse(adresse);
