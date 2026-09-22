@@ -1,5 +1,5 @@
-import {Patient} from "../BO/Patient.js";
-import {Adresse} from "../BO/Adresse.js";
+import {Patient} from "./BO/Patient.js";
+import {Adresse} from "./BO/Adresse.js";
 console.log("__________________________ Patient _______________________________");
 
 const nio = Adresse.fromSansMentions(19, null, "avenue Léo Lagrange", 79000, "Niort")
