@@ -1,8 +1,8 @@
-import {MedecinGeneraliste} from "../BO/MedecinGeneraliste.js";
-import {Adresse} from "../BO/Adresse.js";
-import {Patient} from "../BO/Patient.js";
-import {RendezVous} from "../BO/RendezVous.js";
-import {Creneau} from "../BO/Creneau.js";
+import {MedecinGeneraliste} from "./BO/MedecinGeneraliste.js";
+import {Adresse} from "./BO/Adresse.js";
+import {Patient} from "./BO/Patient.js";
+import {RendezVous} from "./BO/RendezVous.js";
+import {Creneau} from "./BO/Creneau.js";
 
 console.log("__________________________________________________________________");
 console.log("__________________________ Rendez-Vous ___________________________");

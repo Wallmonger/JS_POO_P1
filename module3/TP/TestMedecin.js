@@ -1,7 +1,7 @@
 
-import {Adresse} from "../BO/Adresse.js";
-import {MedecinGeneraliste} from "../BO/MedecinGeneraliste.js";
-import {Creneau} from "../BO/Creneau.js";
+import {Adresse} from "./BO/Adresse.js";
+import {MedecinGeneraliste} from "./BO/MedecinGeneraliste.js";
+import {Creneau} from "./BO/Creneau.js";
 
 //Création d'une adresse
 const sh = new Adresse("ZAC du Moulin Neuf", 2, "B", "rue Benjamin Franklin", 44800,
@@ -30,11 +30,14 @@ const c13 = new Creneau(new Date(0, 0, 0, 15, 30), 30, edmond);
 const c14 = new Creneau(new Date(0, 0, 0, 16, 0), 30, edmond);
 const c15 = new Creneau(new Date(0, 0, 0, 16, 30), 30, edmond);
 
+
+
+
 //Affichage
 console.log("__________________________ Créneaux ______________________________");
 c1.afficher();
 edmond.ajouterCreneau(c1)
-console.log(`Médecin associé à ce créneau : Dr ${c1.medecin.nom}`);
+console.log(`Médecin associé à ce créneau : Dr ${c1.medecin.lastname}`);
 console.log("------------------------------------------------------------------");
 melanie.afficher();
 console.log("------------------------------------------------------------------");
