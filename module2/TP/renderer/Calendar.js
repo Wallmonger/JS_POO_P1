@@ -1,4 +1,3 @@
-
 export class Calendar {
     constructor(datePicker, calendarDiv) {
 
