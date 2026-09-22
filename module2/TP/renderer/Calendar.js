@@ -15,11 +15,12 @@ export class Calendar {
         this.calendarDiv.innerHTML = '';
         this.renderTableHeader();
 
+        // -1 car les mois sont de 0 à 11
         const firstDayDate = new Date(year, month - 1, 1);
         const firstDay = firstDayDate.getDay();
         const firstDayIndex = firstDay === 0 ? 6 : firstDay - 1;
 
-
+        // Date 0 car les jours commencent à 1 ( il va donc chercher le dernier du mois précédent)
         const lastDay = new Date(year, month, 0).getDate();
         this.renderDays(lastDay, firstDayIndex);
 
