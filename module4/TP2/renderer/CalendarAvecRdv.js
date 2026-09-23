@@ -21,10 +21,6 @@ export class CalendarAvecRdv extends Calendar {
 
             });
         });
-
-
-
-
     }
 
     showRdvForDay(day) {
