@@ -51,12 +51,7 @@ let bateau = new Bateau(
 )
 
 voiture.proprietaire = client;
-console.log("___Details Vehicule____");
-console.log(voiture.proprietaire.afficherDonneesClient());
-console.log("___Données Voiture____");
-console.log(voiture.afficherDonneesVoiture());
-console.log("___Details Vehicule____");
-console.log(voiture.afficherDetails());
+
 console.log("___Details Bateau____");
 console.log(bateau.afficherDetails());
 

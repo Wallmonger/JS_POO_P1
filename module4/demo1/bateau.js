@@ -8,4 +8,14 @@ export class Bateau extends Vehicule {
         this.typeDeCoque = typeDeCoque;
 
     }
+
+    afficherDetails () {
+        return(
+            super.afficherDetails() +
+            `tirant d'eau maxi : ${this.tirantEauMaxi}
+            type de coque : ${this.typeDeCoque}`
+        )
+    }
+
+
 }
