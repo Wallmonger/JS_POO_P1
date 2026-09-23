@@ -58,16 +58,20 @@ export class MedecinGeneraliste {
             return;
         }
 
+        if (this.creneaux.length > MedecinGeneraliste.MAX_CRENEAUX -1) {
+            console.log(`Le médecin ${this.lastname} ${this.firstname} a atteint son maximum de créneaux disponible`);
+            return;
+        }
+
         this.creneaux.push(objetCreneau);
 
     }
 
     get adresse() {
-        return this._adresse;
+        return this.#adresse;
     }
-
     set adresse(value) {
-        this._adresse = value;
+        this.#adresse = value;
     }
 
 }
