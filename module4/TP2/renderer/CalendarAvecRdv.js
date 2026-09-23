@@ -12,7 +12,7 @@ export class CalendarAvecRdv extends Calendar {
 
     renderCalendar() {
         super.renderCalendar();
-        let cells = document.querySelectorAll('.day-cell');
+        let cells = document.querySelectorAll(`.${Calendar.DAY_CELL_CLASS}`);
 
         cells.forEach(cell => {
             cell.addEventListener('click', () => {
@@ -26,25 +26,16 @@ export class CalendarAvecRdv extends Calendar {
     showRdvForDay(day) {
 
         if (!day) return;
-        if (!this.datePicker.value) return; // TODO: Mettre une valeur de base au formulaire
-
-        let rendezVousList = [];
-
+        if (!this.datePicker.value) return;
 
         let [year, month] = this.datePicker.value.split("-");
         year = parseInt(year);
         month = parseInt(month - 1);
-        let dateToVerify = new Date(year, month, day).toLocaleDateString();
+        let dateToVerify = new Date(year, month, day);
 
-        this.arrayRdv.forEach(rdv => {
-            let dateRdvArray = rdv.dateRDV.toLocaleDateString();
-
-            if (dateRdvArray === dateToVerify) {
-                rendezVousList.push(rdv);
-            } else {
-                console.log(`NE MARCHENT PAS`);
-            }
-        })
+        const rendezVousList = this.arrayRdv.filter(
+            (rdv) => rdv.dateRDV.toLocaleDateString() === dateToVerify.toLocaleDateString()
+       );
 
         this.injectIntoHtml(rendezVousList);
 
@@ -72,5 +63,8 @@ export class CalendarAvecRdv extends Calendar {
         })
 
     }
+
+
+
 
 }
