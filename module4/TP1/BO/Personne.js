@@ -13,9 +13,7 @@ export class Personne {
     }
 
     afficher() {
-        console.log(`
-        ${this.lastname} ${this.firstname}
-        ${this.phone}
+        console.log(`${this.lastname} ${this.firstname} \nTéléphone: ${this.phone}
         `)
         if (this.#adresse) {
             this.#adresse.afficher()
