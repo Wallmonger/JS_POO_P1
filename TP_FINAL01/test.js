@@ -18,3 +18,4 @@ console.info("\n -- EQUIPE --");
 jeu.afficherEquipe();
 console.info("\n -- PROJET --");
 jeu.afficherProjet();
+//
