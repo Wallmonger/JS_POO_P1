@@ -1,51 +1,30 @@
-import {Adresse} from "./Adresse.js";
+import {MedecinGeneraliste} from "./MedecinGeneraliste.js";
+import {Personne} from "./Personne.js";
 
 
-export class Patient {
-
-    #adresse;
+export class Patient extends Personne {
 
     constructor(lastname, firstname, phone, gender, securityNumber, birthday, comment, adresse ) {
-        this.lastname = lastname;
-        this.firstname = firstname;
-        this.phone = phone;
+        super(lastname, firstname, phone, adresse);
+
         this.gender = gender;
         this.securityNumber = securityNumber;
         this.birthday = birthday;
         this.comment = comment;
-        this.ajouterAdresse(adresse);
     }
 
 
     afficher () {
+        super.afficher();
         console.log(
-            `${this.lastname.toUpperCase()} ${this.firstname}\n` +
-            `Téléphone : ${this.phone}\n` +
             `Sexe: ${this.gender === "F" ? "Feminin" : "Masculin"}\n` +
             `Numéro de sécurité sociale : ${this.securityNumber}\n` +
             `Date de naissance : ${this.birthday.toLocaleDateString()}\n` +
             `Commentaires : ${this.comment ? this.comment : "[aucun commentaire]"}`
 
         )
-        if (this.#adresse) {
-            this.#adresse.afficher();
-        } else {
-            console.log("");
-        }
+
     }
 
-    get adresse() {
-        return this.#adresse;
-    }
-    set adresse(value) {
-        this.#adresse = value;
-    }
 
-    ajouterAdresse(adresse) {
-        if (adresse instanceof Adresse) {
-            if (!this.#adresse) {
-                this.#adresse = adresse;
-            }
-        }
-    }
 }
