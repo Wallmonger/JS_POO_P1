@@ -31,22 +31,22 @@ export class CalendarAvecRdv extends Calendar {
         let [year, month] = this.datePicker.value.split("-");
         year = parseInt(year);
         month = parseInt(month - 1);
-        let dateToVerify = new Date(year, month, day);
+        let dateToVerify = new Date(year, month, day).toLocaleDateString();
 
         const rendezVousList = this.arrayRdv.filter(
-            (rdv) => rdv.dateRDV.toLocaleDateString() === dateToVerify.toLocaleDateString()
+            (rdv) => rdv.dateRDV.toLocaleDateString() === dateToVerify
        );
 
-        this.injectIntoHtml(rendezVousList);
+        this.injectIntoHtml(rendezVousList, dateToVerify);
 
     }
 
-    injectIntoHtml (rdvList) {
+    injectIntoHtml (rdvList, dateToVerify) {
         this.idDisplay.innerHTML = "";
 
         if (rdvList.length === 0) {
             const div = document.createElement("div");
-            div.innerText = "Aucun rendez-vous à cette date";
+            div.innerHTML = `<h1 style="text-align: center">${dateToVerify}</h1>\nAucun rendez-vous à cette date`;
             this.idDisplay.appendChild(div);
             return;
         }
