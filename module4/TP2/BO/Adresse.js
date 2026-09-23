@@ -1,32 +1,29 @@
 export class Adresse {
-    constructor(mentionsComplementaires, numeroDeVoie, typeDeVoie, nom, codePostal, commune) {
-        this.mentionsComplementaires = mentionsComplementaires;
-        this.numeroDeVoie = numeroDeVoie;
-        this.typeDeVoie = typeDeVoie || null;
-        this.nom = nom;
-        this.codePostal = codePostal;
-        this.commune = commune;
+    // Constructeurs
+    constructor(mentionsCompl, numero, complNumero, rue, cp, ville) {
+        this.mentionsCompl = mentionsCompl || null;
+        this.numero = numero;
+        this.complNumero = complNumero || null;
+        this.rue = rue;
+        this.cp = cp;
+        this.ville = ville;
     }
 
-    static fromSansMentions (numeroDeVoie, typeDeVoie , nom, codePostal, commune) {
-        return new Adresse(
-            "",
-            numeroDeVoie,
-            typeDeVoie || null,
-            nom,
-            codePostal,
-            commune
+    // Deuxième constructeur simulé
+    static fromSansMentions(numero, complNumero, rue, cp, ville) {
+        return new Adresse(null, numero, complNumero, rue, cp, ville);
+    }
+
+    // Méthodes
+    afficher() {
+        if (this.mentionsCompl) {
+            console.log(this.mentionsCompl);
+        }
+        console.log(
+            `${this.numero}${this.complNumero ?? ""} ${this.rue}\n${String(this.cp).padStart(5, "0")} ${this.ville.toUpperCase()}`
         );
     }
 
-    afficher () {
-        if (this.mentionsComplementaires) {
-            console.log(this.mentionsComplementaires);
-        }
-        console.log(`${this.numeroDeVoie} ${this.typeDeVoie ?? ""}${this.nom}\n`+
-            `${String(this.codePostal).padEnd(5, "0")} ${this.commune.toUpperCase()}\n`);
-
-        ;
-    }
 
 }
+

@@ -1,16 +1,20 @@
 export class RendezVous {
-    constructor(creneau, patient, date) {
+
+    constructor(creneau, patient, dateRDV) {
         this.creneau = creneau;
         this.patient = patient;
-        this.date = date;
-
+        this.dateRDV = dateRDV;
     }
 
-    afficher () {
-        console.log(`Rendez-vous du ${this.date.toLocaleDateString()}`);
+
+    afficher() {
+
+        console.log(
+            `Rendez-vous du ${this.dateRDV.toLocaleDateString()}`);
         this.creneau.afficher();
-        console.log(`avec le Dr ${this.creneau.medecin.lastname}`);
+        console.log(`avec le Dr ${this.creneau.medecin.nom}`);
         console.log('pour :');
         this.patient.afficher();
     }
+
 }

@@ -1,37 +1,37 @@
-import {Adresse} from "./Adresse.js";
 import {Personne} from "./Personne.js";
 
-export class Medecin extends Personne {
+export class Medecin extends Personne{
 
     static MAX_CRENEAUX = 15;
 
-    constructor(lastname, firstname, phone, adresse) {
-        super(lastname, firstname, phone, adresse);
+    constructor(nom, prenom, numeroDeTelephone, adresse) {
+        super(nom, prenom, numeroDeTelephone, adresse);
         this.creneaux = [];
     }
 
-    afficher() {
-        super.afficher();
-        if (this.creneaux.length > 0) {
+    afficher(){
+        super.afficher()
+        if(this.creneaux.length > 0){
+            console.log("Créneaux :");
             this.creneaux.forEach(creneau => creneau.afficher());
         }
     }
 
 
-    ajouterCreneau (objetCreneau) {
-
-        if (this !== objetCreneau.medecin) {
-            console.log("medecin déjà pris")
+    ajouterCreneau(creneauAAjouter) {
+        if (creneauAAjouter.medecin !== this) {
+            console.error(
+                "Ce créneau ne peut être associé à ce médecin car il est déjà associé à un autre"
+            );
             return;
         }
 
-        if (this.creneaux.length > Medecin.MAX_CRENEAUX -1) {
-            console.log(`Le médecin ${this.lastname} ${this.firstname} a atteint son maximum de créneaux disponible`);
+        if (this.creneaux.length >= Medecin.MAX_CRENEAUX) {
+            console.error("Trop de créneaux sont affectés à ce médecin");
             return;
         }
 
-        this.creneaux.push(objetCreneau);
-
+        this.creneaux.push(creneauAAjouter);
     }
 
 
