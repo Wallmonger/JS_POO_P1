@@ -30,6 +30,6 @@ console.log("SEARCH TEST __________________________")
 
 console.log("TEST TRI PAR PRIORITE __________________________________")
 
-console.log(dev1.trierTachesParPropriete(Tache.status.Done))
+console.log(dev1.trierTachesParPriorite(dev1.taches));
 
 
