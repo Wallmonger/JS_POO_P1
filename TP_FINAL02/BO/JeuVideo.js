@@ -43,13 +43,11 @@ export class JeuVideo {
             })
         }
     }
-
     chercherTachesTodoNoAttribuees() {
         return this.taches.filter(tache => {
             return tache.statut === Tache.Status.Todo && tache.employe === null
         })
     }
-
     chercherEmployePourTypeTache(typeTache) {
         let tacheSpeciality = Object.keys(Tache.TypesTaches).find(tache => {
             return Object.values(Tache.TypesTaches[tache]).includes(typeTache);
@@ -65,7 +63,6 @@ export class JeuVideo {
         return firstEmployeeForTask;
 
     }
-
     attribuerTachesTodoNonAttribuees() {
         const list = this.chercherTachesTodoNoAttribuees();
         if (!list || list.length < 1) return;

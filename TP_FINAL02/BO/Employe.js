@@ -21,21 +21,18 @@ export class Employe {
 
     ajouterTache(tache) {
         this.taches.push(tache);
-        tache.employe = this;
-    }
 
+    }
     trouverTachesParStatut(statut) {
         return (
             this.taches.filter(tache => tache.statut === statut)
         )
     }
-
     trierTachesParPriorite(taches) {
         return taches.sort((tache1, tache2) => {
             return tache2.priorite - tache1.priorite;
         });
     }
-
     travaillerTachesTodo () {
         const tachesTodo = this.trouverTachesParStatut(Tache.Status.Todo);
 
@@ -56,7 +53,6 @@ export class Employe {
         // return tachesTodoTri;
 
     }
-
     terminerTachesInProgress() {
         const tachesInProgress = this.trouverTachesParStatut(Tache.Status.InProgress);
 
@@ -79,7 +75,6 @@ export class Employe {
 
         // return tachesInProgressTri;
     }
-
     travailler() {
         console.log(`-- ${this.prenom} gère ses tâches IN PROGRESS --`);
         this.terminerTachesInProgress();
