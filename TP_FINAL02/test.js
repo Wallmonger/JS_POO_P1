@@ -12,11 +12,11 @@ jeu.ajouterEmploye(graphiste1);
 
 
 
-let tache1 = new Tache("Regle 12", "Créer les questions chances", "Programmation_Gameplay", "Could", "Todo");
-let tache2 = new Tache("Regle 3", "Créer les questions chances", "Programmation_Gameplay", "Should", "InProgress");
-let tache3 = new Tache("Regle 14", "Créer les questions chances", "Programmation_Gameplay", "Must", "Done");
+let tache1 = new Tache("Regle 12", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Could, Tache.status.InProgress);
+let tache2 = new Tache("Regle 3", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Should, Tache.status.InProgress);
+let tache3 = new Tache("Regle 14", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Must, Tache.status.InProgress);
 
-let tache4 = new Tache("Regle 1478", "Créer les questions chances", "Programmation_Gameplay", "Could", "Done");
+let tache4 = new Tache("Regle 1478", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Could, Tache.status.InProgress);
 
 tache1.assignerEmploye(dev1);
 tache2.assignerEmploye(dev1);
@@ -26,10 +26,11 @@ tache4.assignerEmploye(dev1);
 jeu.ajouterTache(tache1);
 jeu.ajouterTache(tache2);
 jeu.ajouterTache(tache3);
+jeu.ajouterTache(tache4);
 console.log("SEARCH TEST __________________________")
 
 console.log("TEST TRI PAR PRIORITE __________________________________")
 
-console.log(dev1.trierTachesParPriorite(dev1.taches));
+console.log(dev1.terminerTachesInProgress());
 
 

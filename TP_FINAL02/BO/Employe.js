@@ -24,17 +24,27 @@ export class Employe {
 
     trouverTachesParStatut(statut) {
         return (
-            this.taches.filter(tache => tache.statut.toLowerCase() === statut.toLowerCase())
+            this.taches.filter(tache => tache.statut === statut)
         )
     }
 
     trierTachesParPriorite(taches) {
         return taches.sort((tache1, tache2) => {
-
-            const priorite1 = Tache.priorite[tache1.priorite];
-            const priorite2 = Tache.priorite[tache2.priorite];
-            return priorite2 - priorite1;
+            return tache2.priorite - tache1.priorite;
         });
+    }
+
+    terminerTachesInProgress() {
+        const tachesInProgress = this.trouverTachesParStatut(Tache.status.InProgress);
+
+        if(!tachesInProgress || tachesInProgress.length < 1) {
+            return "Aucune tache pour ce statut"
+        }
+        console.log("____Taches in progress");
+        console.log(tachesInProgress);
+        const tachesInProgressTri = this.trierTachesParPriorite(tachesInProgress);
+        console.log("taches in progress tri")
+        console.log(tachesInProgressTri);
     }
 
 }
