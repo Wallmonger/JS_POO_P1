@@ -34,17 +34,37 @@ export class Employe {
         });
     }
 
+    travaillerTachesTodo () {
+        const tachesTodo = this.trouverTachesParStatut(Tache.status.Todo);
+
+        if(!tachesTodo || tachesTodo.length < 1) {
+            return "Aucune Tache Todo";
+        }
+        const tachesTodoTri = this.trierTachesParPriorite(tachesTodo);
+
+        tachesTodoTri.forEach(tache => {
+            tache.statut = Tache.status.InProgress;
+        })
+
+        return tachesTodoTri;
+
+    }
+
     terminerTachesInProgress() {
         const tachesInProgress = this.trouverTachesParStatut(Tache.status.InProgress);
 
         if(!tachesInProgress || tachesInProgress.length < 1) {
             return "Aucune tache pour ce statut"
         }
-        console.log("____Taches in progress");
-        console.log(tachesInProgress);
         const tachesInProgressTri = this.trierTachesParPriorite(tachesInProgress);
-        console.log("taches in progress tri")
-        console.log(tachesInProgressTri);
+
+        // Set every statut to done
+        tachesInProgressTri.forEach((tache) => {
+            tache.statut = Tache.status.Done;
+        });
+
+
+        return tachesInProgressTri;
     }
 
 }
