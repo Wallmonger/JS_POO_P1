@@ -55,12 +55,17 @@ export class JeuVideo {
             return Object.values(Tache.TypesTaches[tache]).includes(typeTache);
         });
 
-        this.employees.forEach(employee => {
+        let firstEmployeeForTask =
+            this.employees.find(employee => {
             let employeeType = employee instanceof Developpeur ? "DEVELOPPEUR" : "GRAPHISTE";
-            if (tacheSpeciality.toUpperCase() === employeeType.toUpperCase()) {
-                console.log(`${employee.prenom} ${employee.nom} devrait s'occuper du ${typeTache} car elle est ${employeeType}`)
-            }
-        });
+            return employeeType === tacheSpeciality;
+        })
+
+        return firstEmployeeForTask;
+
+    }
+
+    attribuerTachesTodoNonAttribuees() {
 
     }
 }

@@ -27,13 +27,13 @@ jeu.ajouterEmploye(dev1);
 jeu.ajouterEmploye(dev2);
 jeu.ajouterEmploye(graphiste1);
 
-console.log(dev1.afficherDetails())
-console.log(dev2.afficherDetails());
-console.log(graphiste1.afficherDetails());
-console.log(jeu.chercherTachesTodoNoAttribuees())
+// console.log(dev1.afficherDetails())
+// console.log(dev2.afficherDetails());
+// console.log(graphiste1.afficherDetails());
+// console.log(jeu.chercherTachesTodoNoAttribuees())
 
-jeu.chercherEmployePourTypeTache(TypesDeTaches.GRAPHISTE.ANIMATION);
-jeu.chercherEmployePourTypeTache(TypesDeTaches.DEVELOPPEUR.DEBUG);
+console.log(jeu.chercherEmployePourTypeTache(TypesDeTaches.DEVELOPPEUR.GAMEPLAY));
+
 
 
 
