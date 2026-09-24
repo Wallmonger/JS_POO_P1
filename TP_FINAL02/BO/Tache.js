@@ -1,19 +1,19 @@
 export class Tache {
 
-    static status = {
+    static Status = {
         Todo: "TODO",
         InProgress: "IN_PROGRESS",
         Done: "DONE",
 
     }
 
-    static priorite = {
+    static Priorites = {
         Could: 1,
         Should: 2,
         Must: 3,
     }
 
-    constructor(titre, description, type, priorite, statut=Tache.status.Todo) {
+    constructor(titre, description, type, priorite, statut=Tache.Status.Todo) {
         this.titre = titre;
         this.description = description;
         this.type = type;
@@ -23,14 +23,14 @@ export class Tache {
     }
 
     afficherTache() {
-        let prioriteName = Object.keys(Tache.priorite).find(key => Tache.priorite[key] === this.priorite);
+        let prioriteName = Object.keys(Tache.Priorites).find(key => Tache.Priorites[key] === this.priorite);
 
         return `- ${this.titre}
                 description: ${this.description}
                 type: ${this.type}
                 priorite: ${prioriteName}
                 statut: ${this.statut}
-                employe: ${this.employe.nom}
+                employe: ${this.employe ? this.employe.nom : "Aucun employé assigné"}
         `
     }
 

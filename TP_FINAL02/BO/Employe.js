@@ -35,7 +35,7 @@ export class Employe {
     }
 
     travaillerTachesTodo () {
-        const tachesTodo = this.trouverTachesParStatut(Tache.status.Todo);
+        const tachesTodo = this.trouverTachesParStatut(Tache.Status.Todo);
 
         if(!tachesTodo || tachesTodo.length < 1) {
             return "Aucune Tache Todo";
@@ -43,10 +43,10 @@ export class Employe {
         const tachesTodoTri = this.trierTachesParPriorite(tachesTodo);
 
         tachesTodoTri.forEach(tache => {
-            tache.changerStatut(Tache.status.InProgress);
+            tache.changerStatut(Tache.Status.InProgress);
             console.log(
                 `${tache.employe.prenom} travaille sur la tâche : ${tache.titre}\n` +
-                `${tache.statut === Tache.status.InProgress ? "Tâche arrêtée pour aujourd'hui" : "En Cours"}\n` +
+                `${tache.statut === Tache.Status.InProgress ? "Tâche arrêtée pour aujourd'hui" : "En Cours"}\n` +
                 tache.afficherTache()
             )
         })
@@ -56,7 +56,7 @@ export class Employe {
     }
 
     terminerTachesInProgress() {
-        const tachesInProgress = this.trouverTachesParStatut(Tache.status.InProgress);
+        const tachesInProgress = this.trouverTachesParStatut(Tache.Status.InProgress);
 
         if(!tachesInProgress || tachesInProgress.length < 1) {
             return "Aucune tache pour ce statut"
@@ -65,11 +65,11 @@ export class Employe {
 
         // Set every statut to done
         tachesInProgressTri.forEach((tache) => {
-            tache.changerStatut(Tache.status.Done);
+            tache.changerStatut(Tache.Status.Done);
 
             console.log(
                 `${tache.employe.prenom} travaille sur la tâche : ${tache.titre}\n` +
-                `${tache.statut === Tache.status.Done ? "Tâche terminée" : "En Cours"}\n` +
+                `${tache.statut === Tache.Status.Done ? "Tâche terminée" : "En Cours"}\n` +
                 tache.afficherTache()
             )
         });
@@ -79,8 +79,10 @@ export class Employe {
     }
 
     travailler() {
-        this.travaillerTachesTodo();
+        console.log(`-- ${this.prenom} gère ses tâches IN PROGRESS --`);
         this.terminerTachesInProgress();
+        console.log(`-- ${this.prenom}  gère ses tâches TODO --`)
+        this.travaillerTachesTodo();
         console.log(`${this.nom} a fini de travailler`);
     }
 }
