@@ -13,6 +13,17 @@ export class Tache {
         Must: 3,
     }
 
+    static TypesTaches = {
+        DEVELOPPEUR: {
+            DEBUG : "Debug",
+            GAMEPLAY: "Gameplay"
+        },
+        GRAPHISTE: {
+            ANIMATION: "Animation",
+            CONCEPT: "Concept"
+        }
+    }
+
     constructor(titre, description, type, priorite, statut=Tache.Status.Todo) {
         this.titre = titre;
         this.description = description;
@@ -48,4 +59,5 @@ export class Tache {
             console.error('Unable to changer statut');
         }
     }
+
 }
