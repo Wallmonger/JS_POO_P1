@@ -10,7 +10,7 @@ const t1 = new Tache("Regle 12", "Créer les questions chances", TypesDeTaches.D
 jeu.ajouterTache(t1);
 const t2 = new Tache("La blibliothèque", "Déplacer le joueur dans la blibliothèque", TypesDeTaches.GRAPHISTE.ANIMATION, Tache.Priorites.Should);
 jeu.ajouterTache(t2);
-const t3 = new Tache("Erreur 567", "Impossible de répondre à la question", TypesDeTaches.DEVELOPPEUR.GAMEPLAY, Tache.Priorites.Must);
+const t3 = new Tache("Erreur 567", "Impossible de répondre à la question", TypesDeTaches.DEVELOPPEUR.DEBUG, Tache.Priorites.Must);
 jeu.ajouterTache(t3);
 
 const t4 = new Tache("Erreur 687", "Déplacement impossible", TypesDeTaches.DEVELOPPEUR.DEBUG, Tache.Priorites.Should, Tache.Status.InProgress);
@@ -27,32 +27,21 @@ jeu.ajouterEmploye(dev1);
 jeu.ajouterEmploye(dev2);
 jeu.ajouterEmploye(graphiste1);
 
-// console.log(dev1.afficherDetails())
-// console.log(dev2.afficherDetails());
-// console.log(graphiste1.afficherDetails());
-// console.log(jeu.chercherTachesTodoNoAttribuees())
+console.info("\n -- EQUIPE --");
+jeu.afficherEquipe();
+console.info("\n -- PROJET --");
+jeu.afficherProjet();
 
-console.log(jeu.chercherEmployePourTypeTache(TypesDeTaches.DEVELOPPEUR.GAMEPLAY));
+// Attribuer les tâches TO DO à un Employe selon son poste
+console.log("-- ATTRIBUER TACHE TODO --");
+jeu.attribuerTachesTodoNonAttribuees();
 
+// Attribution manuelle des tâches en IN PROGRESS - elles devraient déjà être chez quelqu'un
+t4.assignerEmploye(dev2);
+t5.assignerEmploye(dev2);
 
+console.info("\n-- FAIRE TRAVAILLER TOUTE SON EQUIPE --");
+jeu.employees.forEach(e => e.travailler());
 
-
-//
-// console.info("\n -- EQUIPE --");
-// jeu.afficherEquipe();
-// console.info("\n -- PROJET --");
-// jeu.afficherProjet();
-//
-// // Attribuer les tâches TO DO à un Employe selon son poste
-// console.log("-- ATTRIBUER TACHE TODO --");
-// jeu.attribuerTachesTodoNonAttribuees();
-//
-// // Attribution manuelle des tâches en IN PROGRESS - elles devraient déjà être chez quelqu'un
-// t4.assignerEmploye(dev2);
-// t5.assignerEmploye(dev2);
-//
-// console.info("\n-- FAIRE TRAVAILLER TOUTE SON EQUIPE --");
-// jeu.equipe.forEach(e => e.travailler());
-//
-// console.log("-- ETAT DU PROJET EN FIN DE JOURNEE --");
-// jeu.afficherProjet();
+console.log("-- ETAT DU PROJET EN FIN DE JOURNEE --");
+jeu.afficherProjet();

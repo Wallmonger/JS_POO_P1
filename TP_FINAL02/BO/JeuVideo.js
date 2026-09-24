@@ -66,6 +66,12 @@ export class JeuVideo {
     }
 
     attribuerTachesTodoNonAttribuees() {
+        const list = this.chercherTachesTodoNoAttribuees();
+        if (!list || list.length < 1) return;
 
+        list.forEach(task => {
+            let goodMatch = this.chercherEmployePourTypeTache(task.type);
+            task.assignerEmploye(goodMatch);
+        })
     }
 }
