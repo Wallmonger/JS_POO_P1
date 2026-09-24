@@ -8,6 +8,7 @@ export class Developpeur extends Employe {
     }
 
     afficherDetails() {
-        return `${this.prenom} ${this.nom} (Email: ${this.email}, niveau: ${this.niveau})\n${this.prenom} code en ${this.langages.join(", ")}`
+        console.log(super.afficherDetails());
+        return `${this.prenom} code en ${this.langages.join(", ")}`
     }
 }

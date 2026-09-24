@@ -8,6 +8,7 @@ export class Graphiste extends Employe {
     }
 
     afficherDetails() {
-        return `${this.prenom} ${this.nom} (Email: ${this.email}, niveau: ${this.niveau})\n${this.prenom} crée des visuels avec ${this.logiciels.join(", ")}`
+        console.log(super.afficherDetails());
+        return `${this.prenom} crée des visuels avec ${this.logiciels.join(", ")}`
     }
 }

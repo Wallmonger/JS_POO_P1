@@ -21,6 +21,7 @@ export class Employe {
 
     ajouterTache(tache) {
         this.taches.push(tache);
+        tache.employe = this;
     }
 
     trouverTachesParStatut(statut) {

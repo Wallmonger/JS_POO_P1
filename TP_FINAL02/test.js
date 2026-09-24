@@ -45,3 +45,4 @@ jeu.employees.forEach(e => e.travailler());
 
 console.log("-- ETAT DU PROJET EN FIN DE JOURNEE --");
 jeu.afficherProjet();
+console.log(dev1.afficherDetails())

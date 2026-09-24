@@ -57,8 +57,9 @@ export class JeuVideo {
 
         let firstEmployeeForTask =
             this.employees.find(employee => {
-            let employeeType = employee instanceof Developpeur ? "DEVELOPPEUR" : "GRAPHISTE";
-            return employeeType === tacheSpeciality;
+                // Better way : const nomClasse = e.constructor.name.toUpperCase();
+                let employeeType = employee instanceof Developpeur ? "DEVELOPPEUR" : "GRAPHISTE";
+                return employeeType === tacheSpeciality;
         })
 
         return firstEmployeeForTask;

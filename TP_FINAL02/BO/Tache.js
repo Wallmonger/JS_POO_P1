@@ -53,7 +53,7 @@ export class Tache {
     }
 
     changerStatut (newStatut) {
-        if (this.statut) {
+        if (this.statut && Object.values(Tache.Status).includes(newStatut)) {
             this.statut = newStatut;
         } else {
             console.error('Unable to changer statut');
