@@ -13,8 +13,8 @@ jeu.ajouterEmploye(graphiste1);
 
 
 let tache1 = new Tache("Regle 12", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Could, Tache.status.Todo);
-let tache2 = new Tache("Regle 3", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Should, Tache.status.Todo);
-let tache3 = new Tache("Regle 14", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Must, Tache.status.Todo);
+let tache2 = new Tache("Regle 3", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Must, Tache.status.Todo);
+let tache3 = new Tache("Regle 14", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Must, Tache.status.InProgress);
 
 let tache4 = new Tache("Regle 1478", "Créer les questions chances", "Programmation_Gameplay", Tache.priorite.Could, Tache.status.Todo);
 
@@ -29,9 +29,4 @@ jeu.ajouterTache(tache3);
 jeu.ajouterTache(tache4);
 
 
-console.log("TRAVAILLER TACHE TODO __________________________________________");
-console.log(dev1.travaillerTachesTodo())
-console.log("TRAVAILLER TACHE IN PROGRESS __________________________________________")
-console.log(dev1.terminerTachesInProgress())
-
-
+dev1.travailler();

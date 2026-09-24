@@ -43,10 +43,15 @@ export class Employe {
         const tachesTodoTri = this.trierTachesParPriorite(tachesTodo);
 
         tachesTodoTri.forEach(tache => {
-            tache.statut = Tache.status.InProgress;
+            tache.changerStatut(Tache.status.InProgress);
+            console.log(
+                `${tache.employe.prenom} travaille sur la tâche : ${tache.titre}\n` +
+                `${tache.statut === Tache.status.InProgress ? "Tâche arrêtée pour aujourd'hui" : "En Cours"}\n` +
+                tache.afficherTache()
+            )
         })
 
-        return tachesTodoTri;
+        // return tachesTodoTri;
 
     }
 
@@ -60,11 +65,22 @@ export class Employe {
 
         // Set every statut to done
         tachesInProgressTri.forEach((tache) => {
-            tache.statut = Tache.status.Done;
+            tache.changerStatut(Tache.status.Done);
+
+            console.log(
+                `${tache.employe.prenom} travaille sur la tâche : ${tache.titre}\n` +
+                `${tache.statut === Tache.status.Done ? "Tâche terminée" : "En Cours"}\n` +
+                tache.afficherTache()
+            )
         });
 
 
-        return tachesInProgressTri;
+        // return tachesInProgressTri;
     }
 
+    travailler() {
+        this.travaillerTachesTodo();
+        this.terminerTachesInProgress();
+        console.log(`${this.nom} a fini de travailler`);
+    }
 }

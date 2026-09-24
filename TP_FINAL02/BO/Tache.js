@@ -13,7 +13,7 @@ export class Tache {
         Must: 3,
     }
 
-    constructor(titre, description, type, priorite, statut="Todo") {
+    constructor(titre, description, type, priorite, statut=Tache.status.Todo) {
         this.titre = titre;
         this.description = description;
         this.type = type;
@@ -23,10 +23,12 @@ export class Tache {
     }
 
     afficherTache() {
+        let prioriteName = Object.keys(Tache.priorite).find(key => Tache.priorite[key] === this.priorite);
+
         return `- ${this.titre}
                 description: ${this.description}
                 type: ${this.type}
-                priorite: ${this.priorite}
+                priorite: ${prioriteName}
                 statut: ${this.statut}
                 employe: ${this.employe.nom}
         `
@@ -36,6 +38,14 @@ export class Tache {
         if (this.employe === null) {
             this.employe = employee;
             this.employe.ajouterTache(this);
+        }
+    }
+
+    changerStatut (newStatut) {
+        if (this.statut) {
+            this.statut = newStatut;
+        } else {
+            console.error('Unable to changer statut');
         }
     }
 }
