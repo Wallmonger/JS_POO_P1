@@ -4,6 +4,7 @@ export class Employe {
     static Niveaux = {
         JUNIOR: "Junior",
         SENIOR: "Senior",
+        EXPERT: "Expert",
     }
 
     constructor(nom, prenom, email, niveau) {
