@@ -1,3 +1,5 @@
+import {Tache} from "./Tache.js";
+
 export class Employe {
     static Niveaux = {
         JUNIOR: "Junior",
@@ -26,6 +28,13 @@ export class Employe {
         )
     }
 
+    trierTachesParPropriete() {
+        return this.taches.sort((tache1, tache2) => {
 
+            const priorite1 = Tache.priorite[tache1.priorite];
+            const priorite2 = Tache.priorite[tache2.priorite];
+            return priorite2 - priorite1;
+        });
+    }
 
 }

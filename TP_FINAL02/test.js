@@ -13,20 +13,23 @@ jeu.ajouterEmploye(graphiste1);
 
 
 let tache1 = new Tache("Regle 12", "Créer les questions chances", "Programmation_Gameplay", "Could", "Todo");
-let tache2 = new Tache("Regle 3", "Créer les questions chances", "Programmation_Gameplay", "Could", "InProgress");
-let tache3 = new Tache("Regle 14", "Créer les questions chances", "Programmation_Gameplay", "Could", "Done");
+let tache2 = new Tache("Regle 3", "Créer les questions chances", "Programmation_Gameplay", "Should", "InProgress");
+let tache3 = new Tache("Regle 14", "Créer les questions chances", "Programmation_Gameplay", "Must", "Done");
+
+let tache4 = new Tache("Regle 1478", "Créer les questions chances", "Programmation_Gameplay", "Could", "Done");
 
 tache1.assignerEmploye(dev1);
-tache2.assignerEmploye(graphiste1);
+tache2.assignerEmploye(dev1);
 tache3.assignerEmploye(dev1);
+tache4.assignerEmploye(dev1);
 
 jeu.ajouterTache(tache1);
 jeu.ajouterTache(tache2);
 jeu.ajouterTache(tache3);
 console.log("SEARCH TEST __________________________")
-console.log(dev1.trouverTachesParStatut(Tache.status.Done))
 
 console.log("TEST TRI PAR PRIORITE __________________________________")
 
+console.log(dev1.trierTachesParPropriete(Tache.status.Done))
 
 
